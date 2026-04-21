@@ -122,6 +122,7 @@ body {
 
 #gameWrapper {
     transform-origin: top center;
+    text-align: center;
 }
 
 /* Scale down for smaller screens */
