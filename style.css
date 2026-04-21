@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    background-size: cover;
+}
+
+#title{
+    font-size: 68px;
+    text-decoration: underline;
+    color: gold;
+    margin-top: 2%;
+}
+
+#subTitle{
+    font-size: 36px;
+    margin-top: .2%;
+    text-decoration: overline;
+    color: gold;
+}
+
+#message{
+    font-size: 32px;
+    margin-top: 3%;
+    color: gold;
+}
+    
+#board {
+    display: grid;
+    grid-template-columns: repeat(7, 80px);
+    grid-template-rows: repeat(6, 80px);
+    gap: 5px;
+    background: rgb(162, 138, 0);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 1%;
+}
+
+.cell {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.red {
+    background: red;
+}
+
+.yellow {
+    background: yellow;
+}
+
+.turn-indicator {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: url(2738231_orig.jpg);
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+#modal{
+    height: 70%;
+    width: 50%;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    visibility: hidden;
+    position: absolute;
+    margin-top: 10%;
+    border: 2px solid gold;
+    border-radius: 10px;
+}
+
+#modalTitle{
+    margin-top: 15%;
+    font-size: 48px;
+    text-shadow: 0px 0px 20px white;
+}
+
+#restart{
+    height: 15%;
+    width: 30%;
+    font-size: 28px;
+    color: black;
+    cursor: pointer;
+    background-color: yellow;
+    border-radius: 10px;
+    transition: transform .3s;
+    margin-top: 10%;
+    font-weight: bold;
+}
+#restart:hover{
+    transform: translateY(-4px);
+    box-shadow: 0px 3px 5px white;
+}
+#restart:active{
+    transform: translateY(-2px);
+    box-shadow: inset 0px 0px 10px black;
+}
