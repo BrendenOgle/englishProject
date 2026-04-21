@@ -117,8 +117,7 @@ function checkWin(row, col) {
 
 function endGame() {
     let modal = document.getElementById("modal")
-    board.innerHTML = ""
-    board.style.visibility = "hidden"
+    document.getElementById("board").innerHTML = ""
 
     if(currentPlayer === "red"){
         currentPlayer = "Nick"
