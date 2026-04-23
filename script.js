@@ -3,6 +3,26 @@ const COLS = 7;
 let board = [];
 let currentPlayer = "red";
 
+const funFacts = [
+  "F. Scott Fitzgerald wrote the novel in 1924, during the Jazz Age.",
+  "The character Jay Gatsby was inspired by Fitzgerald's own experiences and acquaintances.",
+  "The green light at the end of Daisy's dock symbolizes Gatsby's unattainable dreams.",
+  "The novel critiques the American Dream and the moral decay of society in the 1920s.",
+  "'The Great Gatsby' was adapted into several films, with the most famous being the 2013 version starring Leonardo DiCaprio.",
+  "Fitzgerald's original title was 'Trimalchio in West Egg' referencing a character from Roman literature.",
+  "The book gained immense popularity after Fitzgerald's death, becoming a classic of American literature.",
+  "The Valley of Ashes represents the moral and social decay resulting from the uninhibited pursuit of wealth.",
+  "The novel is often studied for its rich symbolism and themes of love, wealth, and disillusionment.",
+  "The Eyes of Dr. T.J. Eckleburg, depicted on a billboard, represent the eyes of God watching over the moral decay of society.",
+  "Fitzgerald uses flashbacks to provide background information on Gatsby's past and his relationship with Daisy.",
+  "Colors play a significant role in the novel, with green symbolizing hope, white representing purity, and yellow indicating corruption.",
+  "The iconic cover art, featuring disembodied eyes and lips, was designed by artist Francis Cugat.",
+  "Fitzgerald's handwritten notes and revisions for the novel are preserved at Princeton University.",
+  "The novel has influenced fashion, with the 1920s flapper style making a comeback in various forms."
+]
+
+const funFactText = document.getElementById("funFactText");
+
 const boardElement = document.getElementById("board");
 const turnDisplay = document.getElementById("turn");
 
@@ -40,6 +60,7 @@ for (let r = 0; r < ROWS; r++) {
 
 // Set initial turn display
 updateTurnIndicator();
+showRandomFact();
 
 function dropPiece(col) {
   for (let r = ROWS - 1; r >= 0; r--) {
@@ -72,6 +93,7 @@ function dropPiece(col) {
       currentPlayer = currentPlayer === "red" ? "yellow" : "red";
       
       updateTurnIndicator(); // update circle
+      showRandomFact();
 
       return;
     }
@@ -115,12 +137,15 @@ function checkWin(row, col) {
   );
 }
 
+function showRandomFact() {
+  const randomIndex = Math.floor(Math.random() * funFacts.length);
+  funFactText.textContent = funFacts[randomIndex];
+  console.log(randomIndex)
+}
+
 function endGame() {
     let modal = document.getElementById("modal")
-    let board = document.getElementById("board")
-    board.innerHTML = ""
-    board.textContent = ""
-    board.style.visibility = "hidden"
+    document.getElementById("board").innerHTML = ""
 
     if(currentPlayer === "red"){
         currentPlayer = "Nick"
